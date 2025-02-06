@@ -1,0 +1,33 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowAccessToCustomDatasets",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::evaluations-faye-456",
+                "arn:aws:s3:::evaluations-faye-456/*"
+            ]
+        },
+        {
+            "Sid": "AllowAccessToOutputBucket",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:ListBucket",
+                "s3:PutObject",
+                "s3:GetBucketLocation",
+                "s3:AbortMultipartUpload",
+                "s3:ListBucketMultipartUploads"
+            ],
+            "Resource": [
+                "arn:aws:s3:::evaluations-faye-456",
+                "arn:aws:s3:::evaluations-faye-456/*"
+            ]
+        }
+    ]
+}
