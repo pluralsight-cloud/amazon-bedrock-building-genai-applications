@@ -1,0 +1,31 @@
+{
+		    "Version": "2012-10-17",
+            "Statement": [
+        {
+            "Sid": "AllowAccessToBedrockResources",
+            "Effect": "Allow",
+            "Action": [
+                "bedrock:InvokeModel",
+                "bedrock:InvokeModelWithResponseStream",
+                "bedrock:CreateModelInvocationJob",
+                "bedrock:StopModelInvocationJob",
+                "bedrock:GetProvisionedModelThroughput",
+                "bedrock:GetInferenceProfile", 
+                "bedrock:ListInferenceProfiles",
+                "bedrock:GetImportedModel",
+                "bedrock:GetPromptRouter",
+                "sagemaker:InvokeEndpoint"
+            ],
+            "Resource": [
+                "arn:aws:bedrock:*::foundation-model/*",
+                "arn:aws:bedrock:*:YOUR_ACCOUNT_NUMBER:inference-profile/*",
+                "arn:aws:bedrock:*:YOUR_ACCOUNT_NUMBER:provisioned-model/*",
+                "arn:aws:bedrock:*:YOUR_ACCOUNT_NUMBER:imported-model/*",
+                "arn:aws:bedrock:*:YOUR_ACCOUNT_NUMBER:application-inference-profile/*",
+                "arn:aws:bedrock:*:YOUR_ACCOUNT_NUMBER:default-prompt-router/*",
+                "arn:aws:sagemaker:*:YOUR_ACCOUNT_NUMBER:endpoint/*",
+                "arn:aws:bedrock:*:YOUR_ACCOUNT_NUMBER:marketplace/model-endpoint/all-access"
+            ]
+        }
+    ]
+}
